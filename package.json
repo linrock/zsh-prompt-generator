@@ -1,5 +1,5 @@
 {
-  "name": "bash-prompt-generator",
+  "name": "zsh-prompt-generator",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

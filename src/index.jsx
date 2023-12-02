@@ -2,11 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import './style.css';
-import BashPromptGenerator from './BashPromptGenerator';
+import ZshPromptGenerator from './ZshPromptGenerator';
 
 ReactDOM.hydrate(
   <React.StrictMode>
-    <BashPromptGenerator />
+    <ZshPromptGenerator />
   </React.StrictMode>,
   document.getElementById('react-mount')
 );

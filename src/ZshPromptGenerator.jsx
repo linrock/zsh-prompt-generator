@@ -20,7 +20,7 @@ const TputReset = () => <>\[$(tput sgr0)\]</>;
 const AnsiColor = ({ code }) => <>\[\e[38;5;<span className="color-code">{code}</span>m\]</>;
 const AnsiReset = () => <>\[\033[0m\]</>;
 
-const BashPromptExample = ({ name, colors }) => {
+const ZshPromptExample = ({ name, colors }) => {
   const [shouldShowPs1, setShouldShowPs1] = useState(false);
   return <>
     <div className="prompt-preview-and-name">
@@ -44,7 +44,7 @@ const BashPromptExample = ({ name, colors }) => {
       <code className="prompt-ps1">
         <span className="export">export </span>
         <span className="ps1-var">PS1</span>=
-        <span className="bash-string">
+        <span className="zsh-string">
           "
           <TputColor code={colors[0]} />\u
           <TputColor code={colors[1]} />@
@@ -55,7 +55,7 @@ const BashPromptExample = ({ name, colors }) => {
       <code className="prompt-ps1">
         <span className="export">export </span>
         <span className="ps1-var">PS1</span>=
-        <span className="bash-string">
+        <span className="zsh-string">
           "
           <AnsiColor code={colors[0]} />\u
           <AnsiColor code={colors[1]} />@
@@ -66,7 +66,7 @@ const BashPromptExample = ({ name, colors }) => {
   </>;
 }
 
-function BashPromptGenerator() {
+function ZshPromptGenerator() {
   const [selectedColorInd, setSelectedColorInd] = useState(0);
   const [colors, setColors] = useState([226, 220, 214, 33]);
   const inputsRef = useRef(new Array(colors.length));
@@ -128,7 +128,7 @@ function BashPromptGenerator() {
 
   return (
     <>
-      <section className="bash-prompt-customize">
+      <section className="zsh-prompt-customize">
         <div className="fluid-container">
           <div className="thin-container">
             <code className="prompt-preview">
@@ -177,7 +177,7 @@ function BashPromptGenerator() {
             <code className="prompt-ps1 thin-screen-invis">
               <span className="export">export </span>
               <span className="ps1-var">PS1</span>=
-              <span className="bash-string">
+              <span className="zsh-string">
                 "
                 <TputColor code={colors[0]} />\u
                 <TputColor code={colors[1]} />@
@@ -192,14 +192,14 @@ function BashPromptGenerator() {
         </div>
       </section>
 
-      <section className="bash-prompt-ps1">
+      <section className="zsh-prompt-ps1">
         <div className="container">
-          <h2>Bash prompt PS1</h2>
+          <h2>zsh prompt PS1</h2>
           <p>To use the colors you chose, set the PS1 environment variable in your shell:</p>
           <code className="prompt-ps1">
             <span className="export">export </span>
             <span className="ps1-var">PS1</span>=
-            <span className="bash-string">
+            <span className="zsh-string">
               "
               <TputColor code={colors[0]} />\u
               <TputColor code={colors[1]} />@
@@ -209,7 +209,7 @@ function BashPromptGenerator() {
           <code className="prompt-ps1-ansi">
             <span className="export">export </span>
             <span className="ps1-var">PS1</span>=
-            <span className="bash-string">
+            <span className="zsh-string">
               "
               <AnsiColor code={colors[0]} />\u
               <AnsiColor code={colors[1]} />@
@@ -219,44 +219,44 @@ function BashPromptGenerator() {
           <p>
             It's up to you to decide between tput and ANSI escape sequences.
             To persist your customized prompt, export PS1 in
-            ~/.bashrc or ~/.bash_profile
+            ~/.zshrc or ~/.zsh_profile
           </p>
         </div>
       </section>
 
-      <section className="bash-prompt-examples">
+      <section className="zsh-prompt-examples">
         <div className="container">
-          <h2>Bash prompt examples</h2>
+          <h2>zsh prompt examples</h2>
           <p style={{ marginBottom: '2rem' }}>
             These are some example color schemes from choosing 4 colors above.
-            Click on the bash prompt previews to view their tput and ANSI PS1 exports.
+            Click on the zsh prompt previews to view their tput and ANSI PS1 exports.
           </p>
 
-          <BashPromptExample name="Emerald green"
+          <ZshPromptExample name="Emerald green"
             colors={[34, 40, 46, 154]} />
 
-          <BashPromptExample name="Lemon line"
+          <ZshPromptExample name="Lemon line"
             colors={[47, 156, 227, 231]} />
 
-          <BashPromptExample name="Fiery orange"
+          <ZshPromptExample name="Fiery orange"
             colors={[196, 202, 208, 220]} />
 
-          <BashPromptExample name="Autumn leaves"
+          <ZshPromptExample name="Autumn leaves"
             colors={[216, 160, 202, 131]} />
 
-          <BashPromptExample name="Desert sand"
+          <ZshPromptExample name="Desert sand"
             colors={[216, 220, 222, 229]} />
 
-          <BashPromptExample name="Ocean blue"
+          <ZshPromptExample name="Ocean blue"
             colors={[39, 45, 51, 195]} />
 
-          <BashPromptExample name="Blue green yellow"
+          <ZshPromptExample name="Blue green yellow"
             colors={[39, 81, 77, 226]} />
 
-          <BashPromptExample name="Violet pink"
+          <ZshPromptExample name="Violet pink"
             colors={[165, 171, 213, 219]} />
 
-          <BashPromptExample name="Monochromatic"
+          <ZshPromptExample name="Monochromatic"
             colors={[243, 245, 249, 254]} />
         </div>
       </section>
@@ -264,4 +264,4 @@ function BashPromptGenerator() {
   );
 }
 
-export default BashPromptGenerator;
+export default ZshPromptGenerator;
