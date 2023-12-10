@@ -28,54 +28,19 @@
           These are the variable substitutions used above.
         </p>
         <pre class="legend">
-\u     user
-\h     hostname
-\w     ~/path/to/directory
+%n	 The user that is logged in
+%M	 Full hostname
+%1~  Current directory, replacing the home dir with ~
 </pre>
+
         <p>
-          For reference, this is a list of all the valid bash prompt variables
-          from the PROMPTING section in the bash man pages in `man bash`
+          Some more variable substitutions
         </p>
-        <pre class="bash-variable-list">
-\a     an ASCII bell character (07)
-\d     the date in "Weekday Month Date" format (e.g., "Tue
-       May 26")
-\D{format}
-       the format is passed to strftime(3) and the result
-       is inserted into the prompt string; an empty format
-       results in a locale-specific time representation.
-       The braces are required
-\e     an ASCII escape character (033)
-\h     the hostname up to the first `.'
-\H     the hostname
-\j     the number of jobs currently managed by the shell
-\l     the basename of the shell's terminal device name
-\n     newline
-\r     carriage return
-\s     the name of the shell, the basename of $0 (the
-       portion following the final slash)
-\t     the current time in 24-hour HH:MM:SS format
-\T     the current time in 12-hour HH:MM:SS format
-\@     the current time in 12-hour am/pm format
-\A     the current time in 24-hour HH:MM format
-\u     the username of the current user
-\v     the version of bash (e.g., 2.00)
-\V     the release of bash, version + patch level (e.g.,
-       2.00.0)
-\w     the current working directory, with $HOME
-       abbreviated with a tilde (uses the value of the
-       PROMPT_DIRTRIM variable)
-\W     the basename of the current working directory, with
-       $HOME abbreviated with a tilde
-\!     the history number of this command
-\#     the command number of this command
-\$     if the effective UID is 0, a #, otherwise a $
-\nnn   the character corresponding to the octal number nnn
-\\     a backslash
-\[     begin a sequence of non-printing characters, which
-       could be used to embed a terminal control sequence
-       into the prompt
-\]     end a sequence of non-printing characters
+<pre>
+%d   Current directory (alternative: %/ )	a number following the “%” indicates how deep the displayed path will be
+%l	 The TTY device you’re using, strips "/dev/" or "/dev/tty"
+%m   Hostname up until the first dot. A number after "%m" will indicated how many dots should be included
+%y	 Same as "%l" just does not strip “/dev” or “/dev/tty”	
 </pre>
       </div>
     </section>
@@ -86,15 +51,15 @@
           <h2>About</h2>
           <p>
             This page is intended to help you easily explore and create color schemes
-            for your bash prompt. The structure of the prompt itself is not customizable yet.
-            If you want to do that, you can reference the bash prompt variables above and
+            for your zsh prompt. The structure of the prompt itself is not customizable yet.
+            If you want to do that, you can reference the zsh prompt variables above and
             manually edit PS1 with the variables you want.
           </p>
           <p>
             This is a work in progress.<br>
             Source code:
-            <a href="https://github.com/linrock/bash-prompt-generator">
-              https://github.com/linrock/bash-prompt-generator
+            <a href="https://github.com/linrock/zsh-prompt-generator">
+              https://github.com/linrock/zsh-prompt-generator
             </a>
           </p>
         </div>
@@ -104,9 +69,6 @@
         <div class="container">
           <h2>Resources</h2>
           <ul>
-            <li>
-              <a href="https://www.man7.org/linux/man-pages/man1/bash.1.html#PROMPTING">Zsh prompt variables</a>
-            </li>
             <li>
               <a href="https://robotmoon.com/256-colors/">xterm 256 colors</a>
             </li>
