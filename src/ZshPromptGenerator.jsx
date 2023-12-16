@@ -18,7 +18,7 @@ const TputColor = ({ code }) => <>%&#123;$(tput setaf <span className="color-cod
 const TputReset = () => <>%&#123;$(tput sgr0)%&#125;</>;
 
 const ZshColor = ({ code }) => <>%&#123;%F&#123;<span className="color-code">{code}</span>&#125;%&#125;</>;
-const AnsiReset = () => <>\[\033[0m\]</>;
+const AnsiReset = () => <>%&#123;%f%&#125;</>;
 
 const ZshPromptExample = ({ name, colors }) => {
   const [shouldShowPs1, setShouldShowPs1] = useState(false);

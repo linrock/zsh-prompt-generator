@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <link rel="icon" href="favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Easily customize colors for your bash prompt and generate PS1 variables. Examples of colorful bash prompts." />
+    <meta name="description" content="Easily customize colors for your zsh prompt and generate PS1 variables. Examples of colorful zsh prompts." />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
@@ -28,8 +28,8 @@
           These are the variable substitutions used above.
         </p>
         <pre class="legend">
-%n	 The user that is logged in
-%M	 Full hostname
+%n   The user that is logged in
+%m   Hostname up until the first dot. A number after "%m" will indicated how many dots should be included
 %1~  Current directory, replacing the home dir with ~
 </pre>
 
@@ -37,10 +37,9 @@
           Some more variable substitutions
         </p>
 <pre>
-%d   Current directory (alternative: %/ )	a number following the “%” indicates how deep the displayed path will be
-%l	 The TTY device you’re using, strips "/dev/" or "/dev/tty"
-%m   Hostname up until the first dot. A number after "%m" will indicated how many dots should be included
-%y	 Same as "%l" just does not strip “/dev” or “/dev/tty”	
+%d   Current working directory
+%M   The full machine hostname
+%#   A ‘#’ if the shell is running with privileges, a ‘%’ if not
 </pre>
       </div>
     </section>
